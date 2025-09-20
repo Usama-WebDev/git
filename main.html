@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>S.confirm Table Water - Online Distribution (Frontend)</title>
+  <link rel="stylesheet" href="mystyle.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"> <span class ="confirm"> S.</span>CONFIRM Table Water</div>
+    <nav>
+      <button id="nav-home" class="nav-btn">Home</button>
+      <button id="nav-customer" class="nav-btn">Customer</button>
+      <button id="nav-vendor" class="nav-btn">Vendor/Admin</button>
+      <button id="nav-delivery" class="nav-btn">Delivery</button>
+      <span id="auth-area"></span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HOME / ABOUT -->
+    <section id="home-section" class="page">
+      <h1>Welcome to S.CONFIRM Table Water — Online Distribution</h1>
+      <p>
+        This is a simple front-end demo of an Online Table Water Distribution
+        Management System. Use the navigation to try Customer, Vendor/Admin, or Delivery views.
+      </p>
+      <h3>How to use</h3>
+      <ol>
+        <li>Register or login from any page (system stores users in your browser).</li>
+        <li>As a Customer: place orders and view your orders.</li>
+        <li>As Vendor/Admin: view all orders, assign delivery person, update status.</li>
+        <li>As Delivery: view assigned orders and mark as delivered.</li>
+      </ol>
+    </section>
+
+    <!-- AUTH (login/register) -->
+    <section id="auth-section" class="page hidden">
+      <h2 id="auth-title">Login</h2>
+      <form id="auth-form">
+        <label>
+          Role:
+          <select id="auth-role">
+            <option value="customer">Customer</option>
+            <option value="vendor">Vendor/Admin</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </label>
+        <label>
+          Username:
+          <input id="auth-username" required />
+        </label>
+        <label id="name-label">
+          Full Name (customers only):
+          <input id="auth-name" />
+        </label>
+        <label>
+          Password:
+          <input id="auth-password" type="password" required />
+        </label>
+
+        <div class="auth-actions">
+          <button id="auth-login" type="button">Login</button>
+          <button id="auth-register" type="button">Register</button>
+        </div>
+        <p id="auth-message" class="muted"></p>
+      </form>
+    </section>
+
+    <!-- CUSTOMER -->
+    <section id="customer-section" class="page hidden">
+      <h2>Customer Portal</h2>
+      <div class="card">
+        <h3>Place Order</h3>
+        <form id="order-form">
+          <label>
+            Quantity (bottles/dispenser):
+            <input id="order-quantity" type="number" min="1" value="1" required />
+          </label>
+          <label>
+            Address:
+            <input id="order-address" required />
+          </label>
+          <button type="submit">Place Order</button>
+          <p id="order-message" class="muted"></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Your Orders</h3>
+        <div id="customer-orders-list"></div>
+      </div>
+    </section>
+
+    <!-- VENDOR / ADMIN -->
+    <section id="vendor-section" class="page hidden">
+      <h2>Vendor / Admin Dashboard</h2>
+      <div class="card">
+        <h3>All Orders</h3>
+        <div id="vendor-orders-list"></div>
+      </div>
+    </section>
+
+    <!-- DELIVERY -->
+    <section id="delivery-section" class="">
+      <h2>Delivery Portal</h2>
+      <div class="card">
+        <h3>Assigned Orders</h3>
+        <div id="delivery-orders-list"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <small>Case Study: S.CONFIRM Table Water Company — Frontend demo (no backend)</small>
+    </footer>
+  </main>
+
+  <script src="appp.js">
+</script>
+</body>
+</html>
